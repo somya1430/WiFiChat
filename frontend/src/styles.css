@@ -1,0 +1,22 @@
+:root { font-family: Inter, system-ui, sans-serif; color: #172033; background: #f3f5f7; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input { font: inherit; }
+.app-shell { display: grid; grid-template-columns: 260px minmax(0, 1fr); min-height: 100vh; }
+.sidebar { padding: 24px; color: white; background: #172033; }
+.sidebar h1 { margin-top: 0; font-size: 1.4rem; }
+.room-form, .message-form { display: flex; gap: 8px; }
+input { width: 100%; min-width: 0; padding: 10px; border: 1px solid #c9d2df; border-radius: 7px; }
+button { padding: 10px 14px; border: 0; border-radius: 7px; cursor: pointer; color: white; background: #2563eb; }
+nav { display: grid; gap: 6px; margin-top: 20px; }
+.room { width: 100%; text-align: left; color: #cbd5e1; background: transparent; }
+.room:hover, .room.active { color: white; background: #334155; }
+.chat-panel { display: grid; grid-template-rows: auto 1fr auto; min-height: 100vh; }
+.chat-panel header { padding: 20px 28px; border-bottom: 1px solid #dce2eb; background: white; }
+.chat-panel h2 { margin: 0; font-size: 1.2rem; }
+.messages { display: grid; align-content: start; gap: 12px; overflow: auto; padding: 28px; }
+.message { display: grid; gap: 4px; max-width: 72ch; padding: 12px; border-radius: 8px; background: white; box-shadow: 0 1px 2px #17203312; }
+.message-form { padding: 20px 28px; border-top: 1px solid #dce2eb; background: white; }
+.message-form input:first-child { max-width: 180px; }
+.error { margin: 12px 28px 0; color: #b42318; }
+@media (max-width: 700px) { .app-shell { grid-template-columns: 1fr; } .sidebar { padding: 16px; } .chat-panel { min-height: 70vh; } .message-form { flex-wrap: wrap; padding: 16px; } .message-form input:first-child { max-width: none; } }

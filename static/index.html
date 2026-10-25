@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Offline Wi-Fi Chat</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="chat-app">
+    <h1>Offline Wi-Fi Chat</h1>
+    <section id="chat" aria-live="polite" aria-label="Chat messages"></section>
+
+    <form id="form">
+      <label class="sr-only" for="name">Your name</label>
+      <input id="name" placeholder="Your name" value="Phone" maxlength="30">
+
+      <label class="sr-only" for="message">Message</label>
+      <input id="message" placeholder="Type a message..." maxlength="2000" required>
+      <button type="submit">Send</button>
+    </form>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

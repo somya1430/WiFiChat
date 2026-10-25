@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+backend/wifi_chat.db
+frontend/node_modules/
+frontend/dist/
+.env
