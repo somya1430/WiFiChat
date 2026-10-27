@@ -5,6 +5,7 @@ button, input { font: inherit; }
 .app-shell { display: grid; grid-template-columns: 260px minmax(0, 1fr); min-height: 100vh; }
 .sidebar { padding: 24px; color: white; background: #172033; }
 .sidebar h1 { margin-top: 0; font-size: 1.4rem; }
+.signed-in { margin: -8px 0 20px; color: #cbd5e1; font-size: .9rem; }
 .room-form, .message-form { display: flex; gap: 8px; }
 input { width: 100%; min-width: 0; padding: 10px; border: 1px solid #c9d2df; border-radius: 7px; }
 button { padding: 10px 14px; border: 0; border-radius: 7px; cursor: pointer; color: white; background: #2563eb; }
@@ -15,8 +16,20 @@ nav { display: grid; gap: 6px; margin-top: 20px; }
 .chat-panel header { padding: 20px 28px; border-bottom: 1px solid #dce2eb; background: white; }
 .chat-panel h2 { margin: 0; font-size: 1.2rem; }
 .messages { display: grid; align-content: start; gap: 12px; overflow: auto; padding: 28px; }
+.chat-content { display: grid; grid-template-columns: minmax(0, 1fr) 200px; min-height: 0; }
+.participants { padding: 24px 16px; border-left: 1px solid #dce2eb; background: #fff; }
+.participants h3 { margin-top: 0; font-size: .9rem; color: #475569; }
+.participants span { display: block; margin: 8px 0; overflow-wrap: anywhere; }
 .message { display: grid; gap: 4px; max-width: 72ch; padding: 12px; border-radius: 8px; background: white; box-shadow: 0 1px 2px #17203312; }
 .message-form { padding: 20px 28px; border-top: 1px solid #dce2eb; background: white; }
 .message-form input:first-child { max-width: 180px; }
 .error { margin: 12px 28px 0; color: #b42318; }
-@media (max-width: 700px) { .app-shell { grid-template-columns: 1fr; } .sidebar { padding: 16px; } .chat-panel { min-height: 70vh; } .message-form { flex-wrap: wrap; padding: 16px; } .message-form input:first-child { max-width: none; } }
+.text-button { margin-top: 16px; padding: 0; color: #2563eb; background: transparent; }
+.sidebar .text-button { color: #bfdbfe; }
+.logout { display: block; margin-top: 30px; }
+.auth-shell { display: grid; min-height: 100vh; place-items: center; padding: 20px; }
+.auth-card { display: grid; gap: 14px; width: min(100%, 360px); padding: 28px; border-radius: 12px; background: white; box-shadow: 0 8px 30px #1720331a; }
+.auth-card h1, .auth-card p { margin: 0; }
+.auth-card label { display: grid; gap: 6px; font-weight: 600; }
+.auth-card .error { margin: 0; }
+@media (max-width: 700px) { .app-shell { grid-template-columns: 1fr; } .sidebar { padding: 16px; } .chat-panel { min-height: 70vh; } .chat-content { grid-template-columns: 1fr; } .participants { border-top: 1px solid #dce2eb; border-left: 0; } .message-form { flex-wrap: wrap; padding: 16px; } .message-form input:first-child { max-width: none; } }

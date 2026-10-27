@@ -1,4 +1,5 @@
 from collections.abc import Generator
+import os
 from pathlib import Path
 
 from sqlalchemy import create_engine
@@ -6,7 +7,7 @@ from sqlalchemy.orm import DeclarativeBase, Session, sessionmaker
 
 
 DATABASE_PATH = Path(__file__).resolve().parents[1] / "wifi_chat.db"
-DATABASE_URL = f"sqlite:///{DATABASE_PATH.as_posix()}"
+DATABASE_URL = os.getenv("CHAT_DATABASE_URL", f"sqlite:///{DATABASE_PATH.as_posix()}")
 
 engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
